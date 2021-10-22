@@ -54,7 +54,7 @@ public class StudentController {
     }
 
     // delet student
-
+    @DeleteMapping("/students/{id}")
     public ResponseEntity<Map<String, Boolean>> deleteStudent(@PathVariable Long id){
 
         Student student = studentRepository
@@ -64,6 +64,5 @@ public class StudentController {
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
         return  ResponseEntity.ok(response);
-
     }
 }
