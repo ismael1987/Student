@@ -29,7 +29,7 @@ export class StudentService {
     return this.httpClient.put(`${this.baseURL}/${id}`, student);
   }
 
-  deleteSudent(id: number): Observable<Object>{
+  deleteStudent(id: number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 
