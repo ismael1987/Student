@@ -13,6 +13,9 @@
             <td> {{ student.firstName }} </td>
             <td> {{ student.lastName }} </td>
             <td> {{ student.schoolClass }} </td>
+            <td>  
+                    <button (click) = "updateStudent(student.id)" class="btn btn-info" >Update</button>
+            </td>
             
         </tr>
     </tbody>

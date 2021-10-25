@@ -20,18 +20,21 @@ public class StudentController {
 
     //getAll student
     @GetMapping("/students")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<Student> getAllStudents(){
         return studentRepository.findAll();
     }
 
     //create Student
     @PostMapping("/students")
+    @CrossOrigin(origins = "http://localhost:4200")
     public Student addNewStudent(@RequestBody Student student){
         return studentRepository.save(student);
     }
 
     //get student by id
     @GetMapping("/students/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Student>  getStudentById(@PathVariable Long id){
         Student student = studentRepository
                 .findById(id)
@@ -41,6 +44,7 @@ public class StudentController {
 
     //edit student by id
     @PutMapping("/students/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Student>  editStudentById(@PathVariable Long id, @RequestBody Student studentDetails){
         Student student = studentRepository
                 .findById(id)
@@ -55,6 +59,7 @@ public class StudentController {
 
     // delet student
     @DeleteMapping("/students/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Map<String, Boolean>> deleteStudent(@PathVariable Long id){
 
         Student student = studentRepository

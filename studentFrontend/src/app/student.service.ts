@@ -15,6 +15,22 @@ export class StudentService {
   getStudentList(): Observable<Student[]>{
     console.log(this.httpClient.get<Student[]>(`${this.baseURL}`));
     return this.httpClient.get<Student[]>(`${this.baseURL}`);
-
   }
+
+  addStudent(student: Student): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}`, student);
+  }
+
+  getStudentById(id: number): Observable<Student>{
+    return this.httpClient.get<Student>(`${this.baseURL}/${id}`);
+  }
+
+  updateStudent(id: number, student: Student): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${id}`, student);
+  }
+
+  deleteSudent(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
+
 }
